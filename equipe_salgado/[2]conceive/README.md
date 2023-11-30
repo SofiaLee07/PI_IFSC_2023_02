@@ -1,5 +1,5 @@
+# ESTUFA HIDROPÔNICA VERTICAL INTELIGENTE
 # CONCEIVE
-## ESTUFA HIDROPÔNICA VERTICAL INTELIGENTE
 A Estufa Hidropônica Vertical Inteligente é uma solução inovadora que combina tecnologia e práticas sustentáveis para criar um ambiente controlado e eficiente para o cultivo de hortaliças. Este sistema utiliza tecnologias de Internet das Coisas (IoT) e automação para otimizar o processo de cultivo. 
 
 O principal objetivo dessa estufa é manter condições ideais para o crescimento das plantas, incluindo o monitoramento do nível de água, o gerenciamento do ciclo de água às plantas e o ajuste da temperatura e da luminosidade. Isso resulta em um cultivo mais eficiente e sustentável, com economia de água e espaço, contribuindo para um futuro mais ecológico.
