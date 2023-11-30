@@ -9,7 +9,9 @@
 No projeto, o sensor ultrassônico foi instalado na parte superior da caixa d'água, desempenhando um papel crucial ao permitir a medição  do nível de água na caixa. Esse dispositivo utiliza ondas sonoras de alta frequência para calcular a distância entre o sensor e a superfície da água.
 
 Contudo, para determinar o volume de água na caixa d'água, é preciso as dimensões internas da caixa (nesse caso o balde). Levando em conta que o formato do reservatório é uma geometria de tronco de cone, a fórmula para calcular o volume (V) é adaptada para essa geometria específica da seguinte maneira:
+
 ![](IMG-IMPLEMENT/formula.png)
+
 Onde:
 - R é o raio maior da caixa d’água
 - r é o raio menor da caixa d’água
@@ -30,7 +32,9 @@ Além disso, ele está conectado à rede Wi-Fi, usando o protocolo MQTT para con
 
 Mas não é só isso. O ESP8266 não só recebe dados, mas também se comunica de volta. Ele nos envia informações sobre o nível do reservatório para outros dispositivos conectados ao mesmo broker. Essa troca de informações é fundamental para manter tudo funcionando.
 ### Esquemático do circuito de controle de nível e processamento de dados:
+
 ![](IMG-IMPLEMENT/esquematico-controledenivel.png)
+
 Este circuito tem como principal função a medição precisa do volume de água em um reservatório, bem como a recepção e processamento de dados dos sensores. Conectado ao ESP (ESP8266), o sensor ultrassônico é alimentado por 5V e GND, com as saídas Trigger e Echo conectadas às entradas do conversor de nível, que ajusta as tensões de 5v para 3.3v,  e a saídas do conversor estão conectadas as entradas D3 (GPIO 02) e D2 (GPIO 00) respectivamente.
 
 Também conectados ao ESP temos o display OLED de 128x64 pixels. Esse display é alimentado com 3.3V e GND do ESP, enquanto as portas de comunicação SCL e SDA do display estão conectadas às portas D1 (GPIO 05) e D2 (GPIO 04) do ESP, respectivamente. Essas portas são comumente usadas para comunicação I2C.
@@ -292,10 +296,15 @@ A função **trigPulse()** é responsável por gerar um pulso no pino de trigger
 
 Em resumo, este código é projetado para medir o nível de água em um reservatório usando um sensor ultrassônico, calcula o volume de água e envia essas informações para um broker MQTT. O sistema também exibe informações relevantes em uma tela OLED.
 ### Construção do circuito de controle de nível e processamento de dados
+
 ![](IMG-IMPLEMENT/protoboard.png)
+
 Os testes realizados na matriz de contato revelaram resultados promissores quanto ao progresso do projeto, impulsionando-nos a dar início à fase de construção dos circuitos em placas de fenolite. Inicialmente, desenvolvemos o esquemático no KiCad, e em seguida, procedemos com a implementação correspondente nas placas de circuito impresso (PCI).
+
 ![](IMG-IMPLEMENT/esquematico-nivel.png)
+
 ![](IMG-IMPLEMENT/nivelpci.png)
+
 Após uma série de aprimoramentos na PCI, demos início ao processo de corrosão da placa de fenolite, um passo crucial na fabricação de circuitos impressos, especialmente quando empregamos o percloreto de ferro como agente corrosivo.
 
 Durante o procedimento de corrosão com percloreto de ferro, as trilhas de cobre na fenolite são deliberadamente expostas a esse agente corrosivo. Essa fase visa eliminar o excesso de cobre, revelando o padrão desejado do circuito impresso. O percloreto de ferro atua como um agente gravador, dissolvendo o cobre não protegido e expondo as trilhas do circuito.
@@ -303,18 +312,30 @@ Durante o procedimento de corrosão com percloreto de ferro, as trilhas de cobre
 É crucial controlar com precisão o tempo de exposição ao percloreto de ferro, pois a corrosão excessiva pode comprometer a integridade estrutural das trilhas, potencialmente resultando em falhas no circuito. Após o processo de corrosão, realizamos uma limpeza meticulosa para eliminar resíduos de percloreto, evitando possíveis problemas futuros de corrosão.
 
 Para prevenir a corrosão indesejada nas placas de fenolite, implementamos a aplicação de um revestimento protetor (verniz) nas trilhas do circuito. Essa prática estabelece uma barreira eficaz contra a oxidação da placa. 
+
 ![](IMG-IMPLEMENT/controledenivel.jpg)
+
 Diante da constatação de corrosão na placa, embarcamos no processo de soldagem dos componentes essenciais. Neste momento, a habilidade técnica torna-se crucial para garantir uma conexão elétrica robusta, restaurando não apenas a funcionalidade da placa, mas também preservando a integridade do circuito. Mantemos uma atenção especial para evitar a ocorrência de solda fria, reconhecendo que uma união inadequada poderia comprometer a eficácia e a estabilidade do circuito eletrônico. Cada junção soldada representa um passo determinante na recuperação da placa corroída, com a precisão e destreza desempenhando papéis fundamentais no restabelecimento da performance e confiabilidade do dispositivo eletrônico.
+
 ![](IMG-IMPLEMENT/solda-controledenivel.jpg)
+
 ### Suporte em impressão 3D para o Sensor Ultrassônico 
 Por meio da plataforma Tinkercad, realizamos a modelagem tridimensional do suporte do nosso projeto:
+
 ![](IMG-IMPLEMENT/tinkercad1.png)
+
 Foi constatado que a impressão não seria viável devido ao tamanho exceder as dimensões da mesa da impressora. Diante desse desafio, com modificações significativas na estrutura e o suporte dos professores e chefes de laboratório, conseguimos imprimir o modelo dividindo em três peças encaixáveis. 
+
 ![](IMG-IMPLEMENT/suporte3d.jpeg)
+
 Ao utilizar a impressão 3D, conseguimos uma abordagem personalizada e detalhada, permitindo-nos esculpir um suporte sob medida para se adequar perfeitamente com a dinâmica do nosso sensor ultrassônico.
+
 ![](IMG-IMPLEMENT/suporte3dmontado.jpeg)
+
 ### CIRCUITO DE CONTROLE DE FLUXO
+
 ![](IMG-IMPLEMENT/controle-de-fluxo.png)
+
 ### Válvula solenóide:
 Foi utilizada uma válvula solenóide para o controle do fluxo de água. Esse dispositivo eletromecânico opera por meio de uma abertura ou fechamento controlado por um campo magnético gerado por uma bobina solenóide. A função principal da válvula solenóide é interromper o fluxo de água quando o usuário ultrapassa os limites de consumo no modo de racionamento.
 
@@ -322,7 +343,9 @@ No cenário de racionamento de água, sempre que os limites de consumo são atin
 ### Sensor de fluxo:
 O sensor de fluxo de água, outro componente vital do nosso sistema, regula a vazão durante o modo de racionamento. Este dispositivo mede a taxa ou volume de água que passa por ele, fornecendo informações cruciais para o controle eficaz do consumo de água em nosso projeto.
 ### Esquemático do circuito de controle de fluxo:
+
 ![](IMG-IMPLEMENT/Fluxo_valvula_bb.jpg)
+
 O sistema consiste em dois circuitos idênticos, simulando o consumo de água em uma residência. O objetivo é monitorar o consumo e, se necessário, interromper o fornecimento quando um limite é ultrapassado.
 
 Conectados ao microcontrolador ESP, temos dois dispositivos principais. O sensor de fluxo, alimentado com 3.3V e GND, gera pulsos cuja frequência está relacionada à velocidade do fluxo de água. Quanto mais rápido a água flui, maior a taxa de rotação do rotor, proporcionando uma medição precisa do consumo.
@@ -572,10 +595,15 @@ O display OLED é utilizado para mostrar a quantidade de litros, a cota disponí
 Em resumo, o código recebe as informações de nível de água e estados de racionamento, enviadas pelo sistema de controle de nível, para que assim monitore e gerencie o fluxo de água em para determinada unidade consumidora, especialmente em situações de racionamento. Além disso as informações de consumo, cota de água disponível (em caso de racionamento) e estado de racionamento são enviados para o broker, para que assim posso ser acessados remotamente através de um aplicativo.
 ### Construção do circuito de controle de fluxo
 Após validar o circuito na matriz de contato, avançamos para a fabricação das duas placas que representam duas unidades consumidoras. Utilizamos os mesmos métodos empregados na placa do circuito de controle de nível e processamento de dados. A seguir, as imagens dos processos:
+
 ![](IMG-IMPLEMENT/esquematico-fluxo.png)
+
 ![](IMG-IMPLEMENT/fluxopci.jpeg)
+
 ![](IMG-IMPLEMENT/controledefluxo.jpg)
+
 ![](IMG-IMPLEMENT/solda-controledefluxo.jpg)
+
 ### APLICATIVO
 O projeto inclui um aplicativo chamado **MQTT Dashboard** disponível na Play Store. Este aplicativo é capaz de se conectar ao broker e receber informações enviadas pelo circuito de controle de fluxo. Para utilizá-lo, é necessário fornecer o endereço e a porta do servidor, bem como o tópico ao qual deseja se cadastrar.
 
@@ -585,10 +613,13 @@ Tópicos:
 **Racionamento@**: Informa o estado atual do reservatório  .
 **Litros@**: Informa a cota em litros disponível.
 Com essas informações, é possível configurar o aplicativo para receber as atualizações do circuito de controle de fluxo.
+
 ![](IMG-IMPLEMENT/aplicativo.jpg)
+
 ### DIAGRAMA DE FUNCIONAMENTO 
 ### Máquina de estados (Circuito de controle de nível e processamento de dados) 
 ![](IMG-IMPLEMENT/caixa.png)
+
 #### Estado Inicial (OCIOSO):
 Descrição: O sistema está ocioso, monitorando continuamente o nível de água
 ##### Ações:
@@ -609,7 +640,9 @@ Descrição: O sistema identificou que o consumo da residência foi excedido, in
 ##### Ações: 
 - Envia para o servidor a id da residência que deve ter o fornecimento de água cortado. 
 ### Máquina de estados (Circuito de controle de fluxo)
+
 ![](IMG-IMPLEMENT/maq_estados_fluxo.jpeg)
+
 #### Estado Inicial (OCIOSO):
 Descrição: Monitora se o sistema deve entrar em modo racionamento.
 ##### Ações: 
