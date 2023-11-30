@@ -326,6 +326,8 @@ Por meio da plataforma Tinkercad, realizamos a modelagem tridimensional do supor
 
 Foi constatado que a impressão não seria viável devido ao tamanho exceder as dimensões da mesa da impressora. Diante desse desafio, com modificações significativas na estrutura e o suporte dos professores e chefes de laboratório, conseguimos imprimir o modelo dividindo em três peças encaixáveis. 
 
+![](IMG-IMPLEMENT/tinkercad2.png)
+
 ![](IMG-IMPLEMENT/suporte3d.jpeg)
 
 Ao utilizar a impressão 3D, conseguimos uma abordagem personalizada e detalhada, permitindo-nos esculpir um suporte sob medida para se adequar perfeitamente com a dinâmica do nosso sensor ultrassônico.
@@ -598,7 +600,7 @@ Após validar o circuito na matriz de contato, avançamos para a fabricação da
 
 ![](IMG-IMPLEMENT/esquematico-fluxo.png)
 
-![](IMG-IMPLEMENT/fluxopci.jpeg)
+![](IMG-IMPLEMENT/fluxopci.png)
 
 ![](IMG-IMPLEMENT/controledefluxo.jpg)
 
