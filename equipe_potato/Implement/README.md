@@ -1,7 +1,7 @@
 # IMPLEMENT
 ## _Projeto de Monitoramento e Racionamento de Água Inteligente para Residências_
 ![](IMG-IMPLEMENT/projetofinal.jpeg)
-![](IMG-IMPLEMENT/verde.jpeg)
+![](IMG-IMPLEMENT/verde.png)
 ![](IMG-IMPLEMENT/lista.png)
 ### CIRCUITO DE CONTROLE DE NÍVEL E PROCESSAMENTO DE DADOS
 ![](IMG-IMPLEMENT/controle-de-nível.png)
@@ -609,11 +609,12 @@ Após validar o circuito na matriz de contato, avançamos para a fabricação da
 ### APLICATIVO
 O projeto inclui um aplicativo chamado **MQTT Dashboard** disponível na Play Store. Este aplicativo é capaz de se conectar ao broker e receber informações enviadas pelo circuito de controle de fluxo. Para utilizá-lo, é necessário fornecer o endereço e a porta do servidor, bem como o tópico ao qual deseja se cadastrar.
 
-Endereço do servidor: test.mosquitto.org
-Porta do servidor: 1883
-Tópicos:
-**Racionamento@**: Informa o estado atual do reservatório  .
-**Litros@**: Informa a cota em litros disponível.
+- Endereço do servidor: test.mosquitto.org
+- Porta do servidor: 1883
+- Tópicos:
+  - **Racionamento@**: Informa o estado atual do reservatório  .
+  - **Litros@**: Informa a cota em litros disponível.
+    
 Com essas informações, é possível configurar o aplicativo para receber as atualizações do circuito de controle de fluxo.
 
 ![](IMG-IMPLEMENT/aplicativo.jpg)
